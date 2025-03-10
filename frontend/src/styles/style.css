@@ -260,7 +260,7 @@
     width: 100px;
 
     border: none;
-    background-color: #5fa0b7;
+    background-color: #888888;
     border-radius: 5px;
 
     cursor: pointer;
@@ -270,7 +270,7 @@
 }
 
 .submit-form:hover {
-    background-color: #3a6b7d;
+    background-color: #444444;
 }
 
 .form-submission {
