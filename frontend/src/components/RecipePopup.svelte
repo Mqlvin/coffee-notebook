@@ -47,6 +47,7 @@
             document.getElementsByName("temperature")[0].value = recipeInformationElement.children[1].children[1].textContent.substring(1); // remove the tilde
             document.getElementsByName("shot_volume")[0].value = recipeInformationElement.children[2].children[1].textContent;
             document.getElementsByName("shot_time")[0].value = recipeInformationElement.children[3].children[1].textContent;
+            document.getElementsByName("shot_weight")[0].value = recipeInformationElement.children[4].children[1].textContent;
 
         }
     });
@@ -67,6 +68,7 @@
         <label>Brew Temperature <input class="input" name="temperature" type="number" step="0.1" min="1" max="120"></label>
         <label>Shot Volume<input class="input" name="shot_volume" type="number" min="1" max="120"></label>
         <label>Shot Time<input class="input" name="shot_time" type="number" min="1" max="120"></label>
+        <label>Shot Weight<input class="input" name="shot_weight" type="number" min="12" max="24" step="0.1"></label>
         <div class="form-submission">
             <button type="submit" class="submit-form">
                 {#if isEditing}

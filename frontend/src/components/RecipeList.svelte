@@ -11,6 +11,8 @@
                 recipes = (await response.json());
             } else {
                 console.error('Failed to fetch data');
+                // if testing...
+                // recipes = JSON.parse(`[{"name":"Waitrose Peru Decaffinated","colours":"303030,3552b5,e3e3e3","grind_size":15,"shot_volume":36,"shot_time":20,"temperature":95.0,"shot_weight":18.0},{"name":"Taylors of Harrogate Italian","colours":"3a3a3a,405d46,85ac73,dfdde3","grind_size":18,"shot_volume":36,"shot_time":22,"temperature":95.0,"shot_weight":18.0},{"name":"Tesco Colombian Decaf","colours":"dd3925,f69b3c,e1e0e0","grind_size":14,"shot_volume":33,"shot_time":20,"temperature":95.0,"shot_weight":18.0},{"name":"Costa Amazonian Blend","colours":"7d2036,fe714e,5fd5c7,b062b0","grind_size":17,"shot_volume":36,"shot_time":20,"temperature":95.0,"shot_weight":18.0},{"name":"Löfbergs Brazil","colours":"381147,4F375B,f8c327","grind_size":18,"shot_volume":36,"shot_time":20,"temperature":95.0,"shot_weight":18.0},{"name":"Ueshima Fuji Mountain","colours":"292929,ef2720,eaeaea","grind_size":17,"shot_volume":18,"shot_time":33,"temperature":95.0,"shot_weight":18.0},{"name":"Taylors of Harrogate Decaf","colours":"174A84,309CCB,76C9EF,F6F5F0","grind_size":17,"shot_volume":36,"shot_time":18,"temperature":95.0,"shot_weight":17.8}]`);
             }
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -70,6 +72,7 @@
                         <div class="single-stat"><p class="feature-key">Temperature: </p><span class="feature-value"> ~{item.temperature}</span><span class="feature-value-unit">°c</span></div>
                         <div class="single-stat"><p class="feature-key">Shot volume: </p><span class="feature-value"> {item.shot_volume}</span><span class="feature-value-unit">ml</span></div>
                         <div class="single-stat"><p class="feature-key">Shot time: </p><span class="feature-value"> {item.shot_time}</span><span class="feature-value-unit">s</span></div>
+                        <div class="single-stat"><p class="feature-key">Shot weight: </p><span class="feature-value"> {parseFloat(item.shot_weight).toFixed(1)}</span><span class="feature-value-unit">g</span></div>
                     </div>
                     <div on:click={(event) => { openPopup(true, event.target); }} class="remove">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M7 7H6a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2v-1"/><path d="M20.385 6.585a2.1 2.1 0 0 0-2.97-2.97L9 12v3h3zM16 5l3 3"/></g></svg>

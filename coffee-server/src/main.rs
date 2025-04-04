@@ -19,6 +19,7 @@ struct CoffeeParameters {
     shot_volume: u16,
     shot_time: u16,
     temperature: f32,
+    shot_weight: f32,
 }
 
 
